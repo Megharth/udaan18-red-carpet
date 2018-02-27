@@ -1,0 +1,40 @@
+.container{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.row{
+ margin-top: 20px;
+}
+
+.col-12{
+  margin-top: 30px;
+}
+
+.navigators{
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.navigators .prev{
+  position: absolute;
+  left: 10%;
+}
+
+.navigators .next{
+  position: absolute;
+  right: 10%;
+}
+
+.submit{
+  position: absolute;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  left: 50%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px){
+  .submit{
+    left: 40%;
+  }
+}

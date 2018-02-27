@@ -1,0 +1,89 @@
+{
+  "categories" : [
+    {
+      "title" : "category1",
+      "participants": [
+        {
+          "name": "participant1",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant2",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant3",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant4",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        }
+      ]
+    },
+    {
+      "title" : "category2",
+      "participants": [
+        {
+          "name": "participant1",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant2",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant3",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant4",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        }
+      ]
+    },
+    {
+      "title" : "category3",
+      "participants": [
+        {
+          "name": "participant1",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant2",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant3",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant4",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        }
+      ]
+    },
+    {
+      "title" : "category4",
+      "participants": [
+        {
+          "name": "participant1",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant2",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant3",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        },
+        {
+          "name": "participant4",
+          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+        }
+      ]
+    }
+  ]
+}
+
