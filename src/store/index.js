@@ -3,26 +3,41 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
+import data from '../data.json';
+
 export const store = new Vuex.Store({
   state: {
-    finalists: []
+    user: {
+      name: null,
+      password: null,
+      token: null
+    },
+    index: 0,
+    votes: data.categories.map(function (c) {
+      return {
+        title: c.title,
+        nominees: c.nominees instanceof Array ? null : {
+          male: null,
+          female: null
+        }
+      }
+    }),
+    categories: data.categories
   },
   mutations: {
-    addFinalist: (state, payload) => {
-      state.finalists.push(
-        {
-          category: payload.category,
-          maleFinalist: payload.maleFinalist,
-          femaleFinalist: payload.femaleFinalist
-        }
-      );
+    incrementIndex: (state) => {
+      state.index++;
     },
-    changeFinalist: (state, payload) => {
-      state.finalists[payload.i] = {
-        category: payload.category,
-        maleFinalist: payload.maleFinalist,
-        femaleFinalist: payload.femaleFinalist
-      }
+    decrementIndex: (state) => {
+      state.index--;
+    },
+    addFinalist: (state, payload) => {
+      if(payload.gender === "male")
+        state.votes[state.index].nominees.male = payload.name;
+      else if(payload.gender === "female")
+        state.votes[state.index].nominees.female = payload.name;
+      else
+        state.votes[state.index].nominees = payload.name;
     }
   }
 });

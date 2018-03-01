@@ -2,85 +2,89 @@
   "categories" : [
     {
       "title" : "category1",
-      "participantsMale": [
-        {
-          "name": "male participant1",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        },
-        {
-          "name": "male participant2",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        },
-        {
-          "name": "male participant3",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        },
-        {
-          "name": "male participant4",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        }
-      ],
-      "participantsFemale": [
-        {
-          "name": "female participant1",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },{
-          "name": "female participant2",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },
-        {
-          "name": "female participant3",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },
-        {
-          "name": "female participant4",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        }
+      "nominees": {
+        "male": [
+          {
+            "name": "male participant1",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          },
+          {
+            "name": "male participant2",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          },
+          {
+            "name": "male participant3",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          },
+          {
+            "name": "male participant4",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          }
+        ],
+        "female": [
+          {
+            "name": "female participant1",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          },{
+            "name": "female participant2",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          },
+          {
+            "name": "female participant3",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          },
+          {
+            "name": "female participant4",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          }
 
-      ]
+        ]
+      }
     },
     {
       "title" : "category2",
-      "participantsMale": [
-        {
-          "name": "male participant1",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        },
-        {
-          "name": "male participant2",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        },
-        {
-          "name": "male participant3",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        },
-        {
-          "name": "male participant4",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        }
-      ],
-      "participantsFemale": [
-        {
-          "name": "female participant1",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },{
-          "name": "female participant2",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },
-        {
-          "name": "female participant3",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },
-        {
-          "name": "female participant4",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        }
+      "nominees": {
+        "male": [
+          {
+            "name": "male participant1",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          },
+          {
+            "name": "male participant2",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          },
+          {
+            "name": "male participant3",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          },
+          {
+            "name": "male participant4",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          }
+        ],
+        "female": [
+          {
+            "name": "female participant1",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          },{
+            "name": "female participant2",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          },
+          {
+            "name": "female participant3",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          },
+          {
+            "name": "female participant4",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          }
 
-      ]
+        ]
+      }
     },
     {
       "title" : "category3",
-      "participantsMale": [
+      "nominees": [
         {
           "name": "male participant1",
           "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
@@ -97,64 +101,48 @@
           "name": "male participant4",
           "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
         }
-      ],
-      "participantsFemale": [
-        {
-          "name": "female participant1",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },{
-          "name": "female participant2",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },
-        {
-          "name": "female participant3",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },
-        {
-          "name": "female participant4",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        }
-
       ]
     },
     {
       "title" : "category4",
-      "participantsMale": [
-        {
-          "name": "male participant1",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        },
-        {
-          "name": "male participant2",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        },
-        {
-          "name": "male participant3",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        },
-        {
-          "name": "male participant4",
-          "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
-        }
-      ],
-      "participantsFemale": [
-        {
-          "name": "female participant1",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },{
-          "name": "female participant2",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },
-        {
-          "name": "female participant3",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        },
-        {
-          "name": "female participant4",
-          "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
-        }
+      "nominees": {
+        "male": [
+          {
+            "name": "male participant1",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          },
+          {
+            "name": "male participant2",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          },
+          {
+            "name": "male participant3",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          },
+          {
+            "name": "male participant4",
+            "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
+          }
+        ],
+        "female": [
+          {
+            "name": "female participant1",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          },{
+            "name": "female participant2",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          },
+          {
+            "name": "female participant3",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          },
+          {
+            "name": "female participant4",
+            "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
+          }
 
-      ]
+        ]
+      }
     }
   ]
 }
