@@ -46,36 +46,36 @@
       "nominees": {
         "male": [
           {
-            "name": "male participant1",
+            "name": "male participant2.1",
             "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
           },
           {
-            "name": "male participant2",
+            "name": "male participant2.2",
             "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
           },
           {
-            "name": "male participant3",
+            "name": "male participant2.3",
             "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
           },
           {
-            "name": "male participant4",
+            "name": "male participant2.4",
             "imgUrl": "https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_beard_male_person_user-512.png"
           }
         ],
         "female": [
           {
-            "name": "female participant1",
+            "name": "female participant2.1",
             "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
           },{
-            "name": "female participant2",
+            "name": "female participant2.2",
             "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
           },
           {
-            "name": "female participant3",
+            "name": "female participant2.3",
             "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
           },
           {
-            "name": "female participant4",
+            "name": "female participant2.4",
             "imgUrl": "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
           }
 

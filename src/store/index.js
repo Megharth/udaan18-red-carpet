@@ -25,6 +25,15 @@ export const store = new Vuex.Store({
     categories: data.categories
   },
   mutations: {
+    storeName: (state, payload) => {
+      state.user.name = payload;
+    },
+    storePass: (state, payload) => {
+      state.user.password = payload;
+    },
+    storeToken: (state, payload) => {
+      state.user.token = payload;
+    },
     incrementIndex: (state) => {
       state.index++;
     },

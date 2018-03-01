@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container class="mx-auto container">
+    <b-container class="mx-auto">
       <b-row>
         <b-col>
           <h1>{{category.title}}</h1>
@@ -47,13 +47,24 @@
     methods: {
       next() {
           this.$store.commit('incrementIndex');
+        console.log(this.$store.state.user.token)
       },
       prev() {
         this.$store.commit('decrementIndex');
       },
       submit() {
-        console.log(this.$store.state.votes);
+        console.log(this.$store.state.user.token);
+        this.$http.post("http://demo6673162.mockable.io/login",{
+          votes: this.$store.state.votes,
+        }, {
+          headers: {
+            token: this.$store.state.user.token
+          }
+        })
       },
+      created() {
+        console.log(this.$store.state.user.token)
+      }
     }
   }
 </script>
