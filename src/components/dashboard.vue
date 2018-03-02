@@ -6,18 +6,7 @@
           <h1>{{category.title}}</h1>
         </b-col>
       </b-row>
-      <!--object-->
-      <div v-if="category.nominees instanceof Object">
-        <!--Male Participants-->
-        <participant-list :nominees="category.nominees.male" gender="male" :category="category.title"></participant-list>
-        <!--Female Participants-->
-        <participant-list :nominees="category.nominees.female" gender="female" :category="category.title"></participant-list>
-      </div>
-      <!--array-->
-      <div v-if="category.nominees instanceof Array">
-        <!--participants-->
-        <participant-list :nominees="category.nominees"></participant-list>
-      </div>
+      <participant-list :nominees="category.nominees"></participant-list>
       <b-row class="navigators">
         <b-col cols="12">
           <b-button v-if="index > 0" size="lg" variant="primary" class="prev" @click="prev">prev</b-button>
@@ -32,8 +21,8 @@
 </template>
 
 <script>
-  import participantList from './participantList.vue'
-  import {mapState} from 'vuex'
+  import participantList from './participantList.vue';
+  import {mapState} from 'vuex';
 
   export default {
     components: {
@@ -47,13 +36,11 @@
     methods: {
       next() {
           this.$store.commit('incrementIndex');
-        console.log(this.$store.state.user.token)
       },
       prev() {
         this.$store.commit('decrementIndex');
       },
       submit() {
-        console.log(this.$store.state.user.token);
         this.$http.post("http://demo6673162.mockable.io/login",{
           votes: this.$store.state.votes,
         }, {
@@ -61,9 +48,6 @@
             token: this.$store.state.user.token
           }
         })
-      },
-      created() {
-        console.log(this.$store.state.user.token)
       }
     }
   }

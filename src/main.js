@@ -9,9 +9,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import {store} from "./store"
 import VueResource from 'vue-resource'
 
-Vue.use(BootstrapVue)
-Vue.config.productionTip = false
-Vue.use(VueResource)
+Vue.use(BootstrapVue);
+Vue.config.productionTip = false;
+Vue.use(VueResource);
 
 /* eslint-disable no-new */
 new Vue({
@@ -20,4 +20,4 @@ new Vue({
   store,
   template: '<App/>',
   components: { App }
-})
+});

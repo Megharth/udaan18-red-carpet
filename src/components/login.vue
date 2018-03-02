@@ -22,10 +22,10 @@
 export default{
   methods: {
     storeName() {
-      this.$store.commit('storeName', this.$refs.nameInput.localValue)
+      this.$store.commit('storeName', this.$refs.nameInput.localValue);
     },
     storePass() {
-      this.$store.commit('storePass', this.$refs.passInput.localValue)
+      this.$store.commit('storePass', this.$refs.passInput.localValue);
     },
     login(){
       this.$http.post("http://demo6673162.mockable.io/login", {
@@ -35,6 +35,7 @@ export default{
         console.log(response.body.token);
         if(response.status === 200){
           this.$store.commit('storeToken', response.body.token);
+          this.$router.push('/dashboard');
         }
       });
     }

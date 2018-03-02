@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
@@ -16,10 +16,7 @@ export const store = new Vuex.Store({
     votes: data.categories.map(function (c) {
       return {
         title: c.title,
-        nominees: c.nominees instanceof Array ? null : {
-          male: null,
-          female: null
-        }
+        nominees: null
       }
     }),
     categories: data.categories
@@ -41,12 +38,7 @@ export const store = new Vuex.Store({
       state.index--;
     },
     addFinalist: (state, payload) => {
-      if(payload.gender === "male")
-        state.votes[state.index].nominees.male = payload.name;
-      else if(payload.gender === "female")
-        state.votes[state.index].nominees.female = payload.name;
-      else
-        state.votes[state.index].nominees = payload.name;
+      state.votes[state.index].nominees = payload;
     }
   }
 });
