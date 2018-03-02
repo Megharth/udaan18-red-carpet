@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-container>
-      <b-card title="Sign In">
+      <b-card>
         <b-card-body>
           <b-input-group prepend="Username" class="spacer" @keyup="storeName">
             <b-form-input ref="nameInput" placeholder="username"></b-form-input>
@@ -46,8 +46,6 @@ export default{
   })
 }
 </script>
-<style>
-  .spacer{
-    margin-top: 10px;
-  }
+<style scoped>
+  @import '../css/login.css';
 </style>

@@ -3,18 +3,20 @@
     <b-container class="mx-auto">
       <b-row>
         <b-col>
-          <h1>{{category.title}}</h1>
+          <div class="retro-text">
+            <span>{{category.title}}</span>
+          </div>
         </b-col>
       </b-row>
-      <participant-list :nominees="category.nominees"></participant-list>
+      <participant-list :nominees="category.nominees" class="list" :key="index"></participant-list>
       <b-row class="navigators">
         <b-col cols="12">
-          <b-button v-if="index > 0" size="lg" variant="primary" class="prev" @click="prev">prev</b-button>
-          <b-button v-if="index < categories.length-1" size="lg" variant="primary" class="next" @click="next">next</b-button>
+          <button v-if="index > 0" size="lg" variant="primary" class="prev retro-btn" @click="prev">prev</button>
+          <button v-if="index < categories.length-1" size="lg" variant="primary" class="next retro-btn" @click="next">next</button>
         </b-col>
       </b-row>
       <b-row>
-        <b-button v-if="index === categories.length-1" size="lg" variant="primary" class="mx-auto submit" @click="submit">Submit</b-button>
+        <button v-if="index === categories.length-1" class="mx-auto submit retro-btn" @click="submit">Submit</button>
       </b-row>
     </b-container>
   </div>
