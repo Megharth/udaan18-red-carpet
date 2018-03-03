@@ -1,17 +1,15 @@
 <template>
   <div>
     <b-container>
-      <b-card>
-        <b-card-body>
-          <b-input-group prepend="Username" class="spacer" @keyup="storeName">
-            <b-form-input ref="nameInput" placeholder="username"></b-form-input>
-          </b-input-group>
-          <b-input-group  prepend="password" class="spacer" @keyup="storePass">
-            <b-form-input ref="passInput" type="password" placeholder="password"></b-form-input>
-          </b-input-group>
-          <b-button variant="primary" class="spacer" @click="login">Login</b-button>
-        </b-card-body>
-      </b-card>
+      <div class="login">
+        <b-input-group class="spacer" @keyup="storeName">
+          <b-form-input ref="nameInput" placeholder="username"></b-form-input>
+        </b-input-group>
+        <b-input-group class="spacer" @keyup="storePass">
+          <b-form-input ref="passInput" type="password" placeholder="password"></b-form-input>
+        </b-input-group>
+        <b-button class="spacer retro-btn" @click="login">Login</b-button>
+      </div>
     </b-container>
   </div>
 </template>

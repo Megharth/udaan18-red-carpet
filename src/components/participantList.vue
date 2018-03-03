@@ -1,12 +1,11 @@
 <template>
-  <transition name="fade">
+  <transition name="fade" mode="in-out">
     <div :key="index">
         <b-row>
           <b-col cols="6" lg="3" v-for="nominee in nominees">
             <b-card :img-src="nominee.imgUrl"
                     img-alt="nominee_image"
                     img-top
-                    style="max-width: 450px"
                     :class="{'mx-auto': true, 'highlight' : selected === nominee.name, 'fadeOut' : selected !== nominee.name}"
                     @click="selectNominee(nominee.name)">
               <b-card-body>
