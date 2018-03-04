@@ -26,6 +26,6 @@
     }
   }
 </script>
-<style scoped>
+<style>
   @import '../css/start.css';
 </style>

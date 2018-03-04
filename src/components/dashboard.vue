@@ -78,6 +78,6 @@
   }
 </script>
 
-<style scoped>
+<style>
   @import '../css/dashboard.css';
 </style>

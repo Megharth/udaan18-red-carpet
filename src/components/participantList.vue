@@ -35,6 +35,6 @@
     }
   }
 </script>
-<style scoped>
+<style>
   @import '../css/participantList.css';
 </style>

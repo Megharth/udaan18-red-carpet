@@ -44,6 +44,6 @@ export default{
   })
 }
 </script>
-<style scoped>
+<style>
   @import '../css/login.css';
 </style>

@@ -10,7 +10,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+body {
+  background-color: #222;
+  transition: all 0.2s ease-in-out;
+}
 #app {
   position: relative;
   text-align: center;
