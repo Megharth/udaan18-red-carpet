@@ -3,7 +3,7 @@
     <transition name="fade"
                 @enter="enter"
                 @leave="leave">
-    <b-container class="list" :key="index">
+    <b-container class="glist" :key="index">
       <b-row>
         <b-col>
           <div class="retro-text">
