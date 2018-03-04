@@ -26,18 +26,29 @@ body {
   }
 }
 
+@keyframes fade {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    transform: scale(0) translateX(-100%);
+  }
+}
+
 .container{
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.list{
+  position: absolute;
+  left: 15%;
 }
 
 .col-12{
   margin-top: 30px;
 }
 
-.list{
-
-}
 .navigators{
   position: relative;
   margin-bottom: 30px;
@@ -103,9 +114,12 @@ body {
   left: 0;
 }
 
-@media screen and (min-width: 320px) and (max-width: 720px){
+@media screen and (min-width: 320px) and (max-width: 570px){
   .container {
     margin-top: 5px;
+  }
+  .list{
+    left: 0;
   }
   .col-12{
     margin-top: 10px;
@@ -118,5 +132,65 @@ body {
   }
   .submit{
     left: 40%;
+  }
+}
+
+@media screen and (min-width: 570px) and (max-width: 600px){
+  .list{
+    left: 4%;
+  }
+  .retro-text{
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 660px){
+  .list{
+    left: 8%;
+  }
+  .retro-text{
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (min-width: 660px) and (max-width: 720px){
+  .list{
+    left: 12%;
+  }
+  .retro-text{
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 766px){
+  .retro-text{
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (min-width: 766px) and (max-width: 860px){
+  .list{
+    left: 9%;
+  }
+  .retro-text{
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1076px){
+  .list{
+    left: 6%;
+  }
+}
+
+@media screen and (min-width: 1076px) and (max-width: 1190px){
+  .list{
+    left: 8%;
+  }
+}
+
+@media screen and (min-width: 1190px) and (max-width: 1362px){
+  .list{
+    left: 7%;
   }
 }

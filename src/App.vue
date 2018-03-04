@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <transition name="fade">
-      <router-view></router-view>
-    </transition>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -14,6 +12,7 @@ export default {
 
 <style>
 #app {
+  position: relative;
   text-align: center;
   margin-top: 0;
 }

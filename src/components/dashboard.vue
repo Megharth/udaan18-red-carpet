@@ -1,6 +1,9 @@
 <template>
   <div>
-    <b-container class="mx-auto">
+    <transition name="fade"
+                @enter="enter"
+                @leave="leave">
+    <b-container class="list" :key="index">
       <b-row>
         <b-col>
           <div class="retro-text">
@@ -8,7 +11,7 @@
           </div>
         </b-col>
       </b-row>
-      <participant-list :nominees="category.nominees" class="list" :key="index"></participant-list>
+      <participant-list :nominees="category.nominees"></participant-list>
       <b-row class="navigators">
         <b-col cols="12">
           <button v-if="index > 0" size="lg" variant="primary" class="prev retro-btn" @click="prev">prev</button>
@@ -19,6 +22,7 @@
         <button v-if="index === categories.length-1" class="mx-auto submit retro-btn" @click="submit">Submit</button>
       </b-row>
     </b-container>
+    </transition>
   </div>
 </template>
 
@@ -26,6 +30,12 @@
   import participantList from './participantList.vue';
   import {mapState} from 'vuex';
 
+  function addEventListener(el, done) {
+    el.addEventListener('animationend', function() {
+      el.style="";
+      done();
+    })
+  }
   export default {
     components: {
       'participant-list' : participantList
@@ -36,6 +46,19 @@
       category: state => state.categories[state.index],
     }),
     methods: {
+      enter(el, done) {
+        console.log("enter");
+        el.style.animationName = "fade";
+        el.style.animationDuration = "1s";
+        addEventListener(el, done);
+      },
+      leave(el, done){
+        console.log("done");
+        el.style.animationName = "fade";
+        el.style.animationDuration = "1s";
+        el.style.animationDirection = "reverse";
+        addEventListener(el, done);
+      },
       next() {
           this.$store.commit('incrementIndex');
       },

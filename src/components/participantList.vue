@@ -1,6 +1,5 @@
 <template>
-  <transition name="fade" mode="in-out">
-    <div :key="index">
+    <div>
         <b-row>
           <b-col cols="6" lg="3" v-for="nominee in nominees">
             <b-card :img-src="nominee.imgUrl"
@@ -15,11 +14,9 @@
           </b-col>
         </b-row>
     </div>
-  </transition>
 </template>
 
 <script>
-
   import {mapState} from 'vuex';
 
   export default{
