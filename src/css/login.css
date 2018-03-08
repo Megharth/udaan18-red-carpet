@@ -1,55 +1,15 @@
-.form-control, .form-control:focus{
+.spacer {
   margin-top: 20px;
-  background-color: #333333;
-  border-color: #333333;
-  color: #00FFFF;
-  height: 50px;
 }
-
-.form-control:focus {
-  box-shadow: 0 0 2px 2px #6f42c1;
-}
-
-.retro-btn{
-  margin-top: 20px;
-  -webkit-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-  padding: 1.2em 2em;
-  font-family: helvetica neue, helvetica, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-align: center;
-  text-decoration: none;
+.instructions {
+  margin-top: 40px;
+  color: #9D00FF;
+  font-size: 1.75rem;
   text-transform: uppercase;
-  color: mintcream;
-  background: #9D00FF;
-  border: 0;
-  border-radius: 0.2em;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  font-family: monospace;
 }
-.retro-btn:hover {
-  background: #9D00FF;
-  color: #00FFFF;
-}
-.retro-btn:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  position: absolute;
-  top: 0.5em;
-  left: 0.5em;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: 0.2em solid #099FFF;
-  border-radius: 0.2em;
-  -webkit-transition: all 0.15s ease-out;
-  transition: all 0.15s ease-out;
-}
-.retro-btn:hover:after {
-  top: 0;
-  left: 0;
+.instructionList {
+  font-size: 0.9rem;
+  text-align: left;
+  list-style-type: square;
 }

@@ -1,6 +1,13 @@
 <template>
   <div>
     <b-container>
+      <b-row>
+        <b-col>
+          <div class="retro-text">
+            <span>Login</span>
+          </div>
+        </b-col>
+      </b-row>
       <div class="login">
         <b-input-group class="spacer" @keyup="storeName">
           <b-form-input ref="nameInput" placeholder="username"></b-form-input>
@@ -9,6 +16,15 @@
           <b-form-input ref="passInput" type="password" placeholder="password"></b-form-input>
         </b-input-group>
         <b-button class="spacer retro-btn" @click="login">Login</b-button>
+      </div>
+      <div class="instructions">
+        <span>Instructions</span>
+        <ul class="instructionList">
+          <li>Instruction 1</li>
+          <li>Instruction 2</li>
+          <li>Instruction 3</li>
+          <li>Instruction 4</li>
+        </ul>
       </div>
     </b-container>
   </div>
@@ -30,7 +46,6 @@ export default{
         name: this.name,
         password: this.password
       }).then(function(response){
-        console.log(response.body.token);
         if(response.status === 200){
           this.$store.commit('storeToken', response.body.token);
           this.$router.push('/dashboard');
@@ -44,6 +59,8 @@ export default{
   })
 }
 </script>
-<style>
+<style scoped>
+  @import '../css/retro.css';
+  @import '../css/input.css';
   @import '../css/login.css';
 </style>

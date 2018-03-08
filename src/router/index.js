@@ -3,10 +3,13 @@ import Router from 'vue-router'
 import Dashboard from '@/components/dashboard'
 import Login from '@/components/login'
 import Start from '@/components/start'
+import Feedback from '@/components/feedback'
+import { store } from '../store';
 
+Vue.use(store);
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -21,7 +24,18 @@ export default new Router({
     {
       path: '/dashboard',
       name: 'Dashboard',
-      component: Dashboard
+      component: Dashboard,
+      beforeEnter: (Login, Dashboard, next) => {
+        if(true)
+          next();
+      }
+    },
+    {
+      path: '/feedback',
+      name: 'Feedback',
+      component: Feedback
     }
   ]
-})
+});
+
+export default router;

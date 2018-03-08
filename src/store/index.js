@@ -13,6 +13,10 @@ export const store = new Vuex.Store({
       token: null
     },
     index: 0,
+    feedback: {
+      rating: null,
+      comment: null
+    },
     votes: data.categories.map(function (c) {
       return {
         title: c.title,
@@ -30,6 +34,12 @@ export const store = new Vuex.Store({
     },
     storeToken: (state, payload) => {
       state.user.token = payload;
+    },
+    storeFeedback: (state, payload) => {
+      state.feedback.comment = payload;
+    },
+    setRating: (state, payload) => {
+      state.feedback.rating = payload;
     },
     incrementIndex: (state) => {
       state.index++;
