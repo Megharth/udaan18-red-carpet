@@ -1,12 +1,3 @@
-/*
-body {
-  font: 12px 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-size: 1.2rem;
-  background: #222222;
-  color: #7000B6;
-}
-*/
-
 .rating-form {
   margin-top: 40px;
 }
@@ -34,41 +25,10 @@ body {
   position: relative;
 }
 
-/*.rating-form input[type='radio'] + label:before {
-  content: attr(data-value);
-  position: absolute;
-  right: 30px;
-  top: 83px;
-  font-size: 30px;
-  opacity: 0;
-  direction: ltr;
-}*/
-
-/*.rating-form input[type='radio']:checked + label:before {
-  right: 25px;
-  opacity: 1;
-}*/
-
-/*.rating-form input[type='radio'] + label:after {
-  content: "/ 5";
-  position: absolute;
-  right: 5px;
-  top: 96px;
-  font-size: 16px;
-  opacity: 0;
-  direction: ltr;
-  transition: all 0.2s ease-in-out;
-}*/
-
-/*.rating-form input[type='radio']:checked + label:after {
-  opacity: 1;
-}*/
-
-
 .rating-form label .fa {
   font-size: 60px;
   line-height: 60px;
-  color: white;
+  color: #4F009E;
   transition: all 0.2s ease-in-out;
 }
 
