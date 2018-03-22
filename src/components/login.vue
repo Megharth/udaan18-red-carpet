@@ -46,7 +46,7 @@
         this.$store.commit('storePass', this.$refs.passInput.localValue);
       },
       login() {
-        this.$http.post("http://udaan18-red-carpet.herokuapp.com/user/login", {
+        this.$http.post("https://udaan18-red-carpet.herokuapp.com/user/login", {
           username: this.name,
           password: this.password
         }).then(function (response) {

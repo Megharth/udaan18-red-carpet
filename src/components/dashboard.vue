@@ -82,7 +82,7 @@
            nomineeId: vote.nominees._id
           }
         });
-        this.$http.post("http://udaan18-red-carpet.herokuapp.com/votes", data, {
+        this.$http.post("https://udaan18-red-carpet.herokuapp.com/votes", data, {
           headers: {
             Authorization: this.$store.state.user.token
           }
