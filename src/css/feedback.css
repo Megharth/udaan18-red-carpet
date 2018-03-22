@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
+.spacer {
+  margin-top: 10px;
+}
+
 .rating-form .rating-star {
   display: inline-block;
   position: relative;

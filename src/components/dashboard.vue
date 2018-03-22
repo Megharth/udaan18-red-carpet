@@ -20,8 +20,8 @@
           <b-row class="navigators">
             <b-col cols="12">
               <button v-if="index > 0" size="lg" class="prev retro-btn" @click="prev">prev</button>
-              <button v-if="index < categories.length-1" size="lg" class="next retro-btn" @click="next">next</button>
-              <button v-if="index === categories.length-1" class="submit retro-btn" @click="submit">Submit</button>
+              <button v-if="index < categories.length-1" size="lg" class="next retro-btn" @click="next" :disabled="!votes[index].nominees.name">next</button>
+              <button v-if="index === categories.length-1" class="submit retro-btn" @click="submit" :disabled="!votes[index].nominees.name">Submit</button>
             </b-col>
           </b-row>
         </b-container>
@@ -35,16 +35,17 @@
   import {mapState} from 'vuex';
 
   function addEventListener(el, done) {
-    el.addEventListener('animationend', function() {
-      el.style="";
+    el.addEventListener('animationend', function () {
+      el.style = "";
       done();
     })
   }
+
   export default {
     components: {
-      'participant-list' : participantList
+      'participant-list': participantList
     },
-    computed : mapState({
+    computed: mapState({
       index: state => state.index,
       categories: state => state.categories,
       category: state => state.categories[state.index],
@@ -59,7 +60,7 @@
         el.childNodes[2].childNodes[0].childNodes[3].classList.add("slideIn");
         addEventListener(el, done);
       },
-      leave(el, done){
+      leave(el, done) {
         el.childNodes[0].childNodes[0].childNodes[0].classList.add("rollOut");
         el.childNodes[2].childNodes[0].childNodes[0].classList.add("slideOut");
         el.childNodes[2].childNodes[0].childNodes[1].classList.add("slideOut");
@@ -68,21 +69,23 @@
         addEventListener(el, done);
       },
       next() {
-          this.$store.commit('incrementIndex');
+        this.$store.commit('incrementIndex');
       },
       prev() {
         this.$store.commit('decrementIndex');
       },
       submit() {
+        console.log(this.votes);
         this.$http.post("http://demo6673162.mockable.io/login", this.votes, {
           headers: {
             token: this.$store.state.user.token
           }
-        })
+        });
+        this.$router.push("/feedback");
       }
     },
     created() {
-      window.onload = function() {
+      window.onload = function () {
         document.getElementById("list").classList.remove("hide");
         document.getElementById("loader").classList.add("hide");
       }

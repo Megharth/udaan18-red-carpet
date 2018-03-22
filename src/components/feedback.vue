@@ -10,6 +10,9 @@
       </b-row>
       <div class="login">
         <b-input-group class="spacer" @keyup="storeFeedback">
+          <b-form-input ref="nameInput" placeholder="Name (optional)" v-model="name"></b-form-input>
+        </b-input-group>
+        <b-input-group class="spacer" @keyup="storeFeedback">
           <b-form-textarea ref="feedbackInput"
                            placeholder="Write your feedback here..."
                            :rows="3"
@@ -71,6 +74,7 @@
   export default{
     data() {
       return {
+        name: null,
         text: null
       }
     },

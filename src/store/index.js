@@ -20,7 +20,11 @@ export const store = new Vuex.Store({
     votes: data.categories.map(function (c) {
       return {
         title: c.title,
-        nominees: null
+        _id: c._id,
+        nominees: {
+          name: null,
+          _id: c.nominees._id
+        }
       }
     }),
     categories: data.categories
@@ -48,7 +52,7 @@ export const store = new Vuex.Store({
       state.index--;
     },
     addFinalist: (state, payload) => {
-      state.votes[state.index].nominees = payload;
+      state.votes[state.index].nominees.name = payload;
     }
   }
 });
