@@ -27,6 +27,7 @@
         </b-container>
       </transition>
     </div>
+
   </div>
 </template>
 
@@ -75,13 +76,19 @@
         this.$store.commit('decrementIndex');
       },
       submit() {
-        console.log(this.votes);
-        this.$http.post("http://demo6673162.mockable.io/login", this.votes, {
-          headers: {
-            token: this.$store.state.user.token
+        const data = this.votes.map((vote) => {
+          return {
+           categoryId: vote._id,
+           nomineeId: vote.nominees._id
           }
         });
-        this.$router.push("/feedback");
+        this.$http.post("http://udaan18-red-carpet.herokuapp.com/votes", data, {
+          headers: {
+            Authorization: this.$store.state.user.token
+          }
+        }).then(function() {
+          this.$router.push("/feedback");
+        })
       }
     },
     created() {

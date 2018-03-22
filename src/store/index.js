@@ -23,11 +23,12 @@ export const store = new Vuex.Store({
         _id: c._id,
         nominees: {
           name: null,
-          _id: c.nominees._id
+          _id: null
         }
       }
     }),
-    categories: data.categories
+    categories: data.categories,
+    error: null
   },
   mutations: {
     storeName: (state, payload) => {
@@ -52,7 +53,11 @@ export const store = new Vuex.Store({
       state.index--;
     },
     addFinalist: (state, payload) => {
-      state.votes[state.index].nominees.name = payload;
+      state.votes[state.index].nominees.name = payload.name;
+      state.votes[state.index].nominees._id= payload.id;
+    },
+    storeError: (state, payload) => {
+      state.error = payload;
     }
   }
 });

@@ -6,7 +6,7 @@
                 img-alt="nominee_image"
                 img-top
                 :class="{'mx-auto': true, 'highlight' : selected.name === nominee.name, 'fadeOut' : selected !== nominee.name}"
-                @click="selectNominee(nominee.name)">
+                @click="selectNominee(nominee.name, nominee._id)">
           <b-card-body>
             <span align="center">{{nominee.name}}</span>
           </b-card-body>
@@ -28,8 +28,11 @@
       }
     }),
     methods: {
-      selectNominee(name) {
-        this.$store.commit('addFinalist', name);
+      selectNominee(name, id) {
+        this.$store.commit('addFinalist', {
+          name,
+          id
+        });
       }
     }
   }
