@@ -16,16 +16,14 @@
               </div>
             </b-col>
           </b-row>
-          <participant-list :nominees="category.nominees"></participant-list>
-          <b-row class="navigators">
-            <b-col cols="12">
-              <button v-if="index > 0" size="lg" class="prev retro-btn" @click="prev">prev</button>
-              <button v-if="index < categories.length-1" size="lg" class="next retro-btn" @click="next" :disabled="!votes[index].nominees.name">next</button>
-              <button v-if="index === categories.length-1" class="submit retro-btn" @click="submit" :disabled="!votes[index].nominees.name">Submit</button>
-            </b-col>
-          </b-row>
+          <participant-list class="participant-row" :nominees="category.nominees"></participant-list>
         </b-container>
       </transition>
+      <div class="navigators">
+        <button v-if="index > 0" size="lg" class="prev retro-btn" @click="prev">prev</button>
+        <button v-if="index < categories.length-1" size="lg" :class="{'next': true, 'retro-btn': true, 'disabled': !votes[index].nominees.name}" @click="next" :disabled="!votes[index].nominees.name">next</button>
+        <button v-if="index === categories.length-1" :class="{'submit': true, 'retro-btn': true, 'disabled': !votes[index].nominees.name}" @click="submit" :disabled="!votes[index].nominees.name">Submit</button>
+      </div>
     </div>
 
   </div>

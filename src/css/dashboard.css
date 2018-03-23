@@ -1,5 +1,14 @@
 body {
+  overflow: hidden;
   /*background: url("../assets/brick-texture.jpg");*/
+}
+
+.disabled, .disabled:hover{
+  background-color: #555555;
+}
+
+.disabled:after {
+  border-color: transparent;
 }
 
 .slideIn {
@@ -133,7 +142,6 @@ body {
   width: 100px;
 }
 
-
 .container{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -151,10 +159,10 @@ body {
 }
 
 .navigators{
-  position: relative;
-  margin-top: 1vh;
-  bottom: 5px;
+  position: fixed;
+  top: 90%;
   height: 100px;
+  width: 100%;
 }
 
 .navigators .prev{
