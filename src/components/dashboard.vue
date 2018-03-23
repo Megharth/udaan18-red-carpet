@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="loading-container" id="loader">
+    <!--<div class="loading-container" id="loader">
       <div class="loading"></div>
       <div id="loading-text">Loading</div>
-    </div>
-    <div id="list" class="hide">
+    </div>-->
+    <div id="list">
       <transition name="slide"
                   @enter="enter"
                   @leave="leave">
@@ -89,12 +89,6 @@
         }).then(function() {
           this.$router.push("/feedback");
         })
-      }
-    },
-    created() {
-      window.onload = function () {
-        document.getElementById("list").classList.remove("hide");
-        document.getElementById("loader").classList.add("hide");
       }
     }
   }
