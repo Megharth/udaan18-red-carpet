@@ -1,10 +1,10 @@
 <template>
   <div>
-    <!--<div class="loading-container" id="loader">
+    <div class="loading-container" id="loader">
       <div class="loading"></div>
       <div id="loading-text">Loading</div>
-    </div>-->
-    <div id="list">
+    </div>
+    <div id="list" class="hide">
       <transition name="slide"
                   @enter="enter"
                   @leave="leave">
@@ -16,13 +16,20 @@
               </div>
             </b-col>
           </b-row>
-          <participant-list class="participant-row" :nominees="category.nominees"></participant-list>
+          <participant-list class="participant-row" :nominees="category.nominees"
+                            :imgObject="imgObject"></participant-list>
         </b-container>
       </transition>
       <div class="navigators">
         <button v-if="index > 0" size="lg" class="prev retro-btn" @click="prev">prev</button>
-        <button v-if="index < categories.length-1" size="lg" :class="{'next': true, 'retro-btn': true, 'disabled': !votes[index].nominees.name}" @click="next" :disabled="!votes[index].nominees.name">next</button>
-        <button v-if="index === categories.length-1" :class="{'submit': true, 'retro-btn': true, 'disabled': !votes[index].nominees.name}" @click="submit" :disabled="!votes[index].nominees.name">Submit</button>
+        <button v-if="index < categories.length-1" size="lg"
+                :class="{'next': true, 'retro-btn': true, 'disabled': !votes[index].nominees.name}" @click="next"
+                :disabled="!votes[index].nominees.name">next
+        </button>
+        <button v-if="index === categories.length-1"
+                :class="{'submit': true, 'retro-btn': true, 'disabled': !votes[index].nominees.name}" @click="submit"
+                :disabled="!votes[index].nominees.name">Submit
+        </button>
       </div>
     </div>
 
@@ -50,6 +57,11 @@
       category: state => state.categories[state.index],
       votes: state => state.votes
     }),
+    data() {
+      return {
+        imgObject: {}
+      }
+    },
     methods: {
       enter(el, done) {
         el.childNodes[0].childNodes[0].childNodes[0].classList.add("rollIn");
@@ -76,18 +88,72 @@
       submit() {
         const data = this.votes.map((vote) => {
           return {
-           categoryId: vote._id,
-           nomineeId: vote.nominees._id
+            categoryId: vote._id,
+            nomineeId: vote.nominees._id
           }
         });
         this.$http.post("https://udaan18-red-carpet.herokuapp.com/votes", data, {
           headers: {
             Authorization: this.$store.state.user.token
           }
-        }).then(function() {
+        }).then(function () {
           this.$router.push("/feedback");
         })
       }
+    },
+    created() {
+
+      function responseToBuffer(response) {
+        return new Promise((resolve, reject) => {
+          response.arrayBuffer()
+            .then((buffer) => resolve({url: response.url, buffer}))
+            .catch((error) => reject(error));
+        })
+      }
+
+      function arrayBufferToBase64(buffer) {
+        let base64Flag = 'data:image/jpeg;base64,';
+        let binary = '';
+        let bytes = [].slice.call(new Uint8Array(buffer));
+        bytes.forEach((b) => binary += String.fromCharCode(b));
+        return base64Flag + window.btoa(binary);
+      }
+
+      const imageUrls = this.categories.reduce((imgList, category) => {
+        return imgList.concat(category.nominees.map(nominee => nominee.imgUrl));
+      }, []);
+
+      function imageArrayToObject(imgArray) {
+        return imgArray.reduce((acc, img) => {
+          acc[img.url] = img.image;
+          return acc;
+        }, {})
+      }
+
+      Promise.all(imageUrls.map(url => fetch(url)))
+        .then(responses => Promise.all(responses.map(responseToBuffer)))
+        .then(bufferUrls => bufferUrls.map(bufferUrl => ({url: bufferUrl.url, image: arrayBufferToBase64(bufferUrl.buffer)})))
+        .then(imageArrayToObject)
+        .then(imgObject => {
+          this.imgObject = imgObject;
+          document.getElementById("list").classList.remove("hide");
+          document.getElementById("loader").classList.add("hide");
+        }).catch((error) => {
+          this.$router.push("/login");
+      });
+
+      // for (let i = 0; i < this.categories.length; i++) {
+      //   for (let j = 0; j < this.categories[i].nominees.length; j++) {
+      //     let self = this;
+      //     fetch(this.categories[i].nominees[j].imgUrl).then(function (response) {
+      //       console.log('loaded');
+      //       response.arrayBuffer().then((buffer) => {
+      //         let imageStr = arrayBufferToBase64(buffer);
+      //         self.imgArray[self.categories[i].nominees[j].imgUrl] = (base64Flag + imageStr);
+      //       })
+      //     })
+      //   }
+      // }
     }
   }
 
