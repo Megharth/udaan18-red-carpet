@@ -3,14 +3,6 @@ body {
   /*background: url("../assets/brick-texture.jpg");*/
 }
 
-.disabled, .disabled:hover{
-  background-color: #555555;
-}
-
-.disabled:after {
-  border-color: transparent;
-}
-
 .slideIn {
   animation : slideIn .3s linear;
 }

@@ -9,8 +9,8 @@
         </b-col>
       </b-row>
       <div class="login">
-        <b-input-group class="spacer" @keyup="storeFeedback">
-          <b-form-input ref="nameInput" placeholder="Name (optional)" v-model="name"></b-form-input>
+        <b-input-group class="spacer" @keyup="setName" >
+          <b-form-input ref="nameInput" placeholder="Name (optional)"></b-form-input>
         </b-input-group>
         <b-input-group class="spacer" @keyup="storeFeedback">
           <b-form-textarea ref="feedbackInput"
@@ -65,7 +65,7 @@
           </div>
         </fieldset>
       </form>
-      <b-button class="spacer retro-btn" @click="submit">Submit</b-button>
+      <b-button :class="{'spacer': true, 'retro-btn': true, 'disabled': !feedback.rating}" @click="submit" :disabled="!feedback.rating">Submit</b-button>
     </b-container>
   </div>
 </template>
@@ -85,10 +85,13 @@
       storeFeedback() {
         this.$store.commit('storeFeedback', this.$refs.feedbackInput.localValue);
       },
+      setName() {
+        this.$store.commit('setName', this.$refs.nameInput.localValue);
+      },
       submit() {
-        this.$http.post("url", this.feedback, {
+        this.$http.post("https://udaan18-red-carpet.herokuapp.com/feedback", this.feedback, {
           headers: {
-            token: this.$store.state.user.token
+            Authorization: this.$store.state.user.token
           }
         });
         this.$router.push("/login");

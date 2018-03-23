@@ -139,27 +139,15 @@
           document.getElementById("list").classList.remove("hide");
           document.getElementById("loader").classList.add("hide");
         }).catch((error) => {
-          this.$router.push("/login");
+          document.getElementById("list").classList.remove("hide");
+          document.getElementById("loader").classList.add("hide");
       });
-
-      // for (let i = 0; i < this.categories.length; i++) {
-      //   for (let j = 0; j < this.categories[i].nominees.length; j++) {
-      //     let self = this;
-      //     fetch(this.categories[i].nominees[j].imgUrl).then(function (response) {
-      //       console.log('loaded');
-      //       response.arrayBuffer().then((buffer) => {
-      //         let imageStr = arrayBufferToBase64(buffer);
-      //         self.imgArray[self.categories[i].nominees[j].imgUrl] = (base64Flag + imageStr);
-      //       })
-      //     })
-      //   }
-      // }
     }
   }
 
 </script>
 
 <style scoped>
-  @import '../css/dashboard.css';
   @import '../css/retro.css';
+  @import '../css/dashboard.css';
 </style>

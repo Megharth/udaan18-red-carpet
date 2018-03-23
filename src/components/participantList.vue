@@ -2,7 +2,7 @@
   <div>
     <b-row>
       <b-col cols="6" lg="3" v-for="nominee in nominees">
-        <b-card :img-src="imgObject[nominee.imgUrl]"
+        <b-card :img-src="imgObject[nominee.imgUrl] || nominee.imgUrl"
                 img-alt="nominee_image"
                 img-top
                 :class="{'mx-auto': true, 'highlight' : selected.name === nominee.name, 'fadeOut' : selected !== nominee.name}"

@@ -14,6 +14,7 @@ export const store = new Vuex.Store({
     },
     index: 0,
     feedback: {
+      name: null,
       rating: null,
       comment: null
     },
@@ -45,6 +46,9 @@ export const store = new Vuex.Store({
     },
     setRating: (state, payload) => {
       state.feedback.rating = payload;
+    },
+    setName: (state, payload) => {
+      state.feedback.name = payload;
     },
     incrementIndex: (state) => {
       state.index++;

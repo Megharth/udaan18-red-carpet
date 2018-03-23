@@ -37,10 +37,13 @@ const router = new Router({
         if(destination.name === "Dashboard" && source.name === "Feedback"){
           next(false);
         }
-        if(destination.name === "Dashboard" && source.name === "Login"){
+        else if(destination.name === "Dashboard" && source.name === "Login"){
           if(store.state.user.token){
             next();
           }
+        }
+        else {
+          next("/login");
         }
       }
     },
@@ -54,6 +57,8 @@ const router = new Router({
             next();
           }
         }
+        else
+          next("/login");
       }
     }
   ]

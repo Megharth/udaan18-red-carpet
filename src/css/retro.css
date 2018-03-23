@@ -22,6 +22,14 @@
   }
 }
 
+.disabled, .disabled:hover{
+  background-color: #555555 !important;
+}
+
+.disabled:after {
+  border-color: transparent !important;
+}
+
 .retro-btn{
   -webkit-transform: rotate(-3deg);
   transform: rotate(-3deg);
