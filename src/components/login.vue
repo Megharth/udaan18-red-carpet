@@ -30,7 +30,6 @@
         </div>
       </b-container>
     </div>
-    <div class="retro-text hide" id="error">{{ error }}</div>
   </div>
 </template>
 
@@ -56,9 +55,8 @@
             this.$router.push('/dashboard');
           }
         }).catch((err) => {
-          document.getElementById("body").classList.add("hide");
-          document.getElementById("error").classList.remove("hide");
           this.$store.commit('storeError', err.body.message);
+          this.$router.push('/error');
         });
       }
     },

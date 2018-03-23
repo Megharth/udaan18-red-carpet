@@ -90,7 +90,8 @@
           headers: {
             token: this.$store.state.user.token
           }
-        })
+        });
+        this.$router.push("/login");
       }
     },
     computed: mapState({

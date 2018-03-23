@@ -141,7 +141,9 @@ body {
 
 .list{
   position: absolute;
-  left: 19%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
 }
 
 .col-12{
@@ -150,7 +152,9 @@ body {
 
 .navigators{
   position: relative;
+  margin-top: 1vh;
   bottom: 5px;
+  height: 100px;
 }
 
 .navigators .prev{
@@ -163,15 +167,26 @@ body {
   right: 10%;
 }
 
-@media screen and (min-width: 320px) and (max-width: 570px){
+.card .card-body {
+  padding: 0;
+  height: 5.0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-height: 667px){
   .container {
     margin-top: 5px;
-  }
-  .list{
-    left: 0;
+    margin-bottom: -5px;
+    height: 640px;
   }
   .col-12{
     margin-top: 10px;
+  }
+  .card .card-body{
+    height: 3rem;
   }
   img.card-img-top {
     height: 100px;
@@ -182,45 +197,27 @@ body {
   }
 }
 
-@media screen and (min-width: 570px) and (max-width: 600px){
-  .list{
-    left: 4%;
-  }
-}
 
-@media screen and (min-width: 600px) and (max-width: 660px){
-  .list{
-    left: 8%;
+@media (min-height: 668px) and (max-height: 812px){
+  body {
+    overflow: hidden
   }
-}
-
-@media screen and (min-width: 660px) and (max-width: 720px){
-  .list{
-    left: 12%;
+  .container {
+    margin-top: 5px;
+    margin-bottom: -5px;
+    /*height: 640px;*/
+  }
+  .col-12{
     margin-top: 10px;
   }
-}
-
-@media screen and (min-width: 766px) and (max-width: 860px){
-  .list{
-    left: 9%;
+  .card .card-body{
+    height: 5rem;
   }
-}
-
-@media screen and (min-width: 990px) and (max-width: 1076px){
-  .list{
-    left: 6%;
+  img.card-img-top {
+    height: 100px;
+    width: 100px;
   }
-}
-
-@media screen and (min-width: 1076px) and (max-width: 1190px){
-  .list{
-    left: 8%;
-  }
-}
-
-@media screen and (min-width: 1190px) and (max-width: 1362px){
-  .list{
-    left: 7%;
+  .loading-container, .loading {
+    margin-top: 200px;
   }
 }

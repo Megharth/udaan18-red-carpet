@@ -7,9 +7,7 @@
                 img-top
                 :class="{'mx-auto': true, 'highlight' : selected.name === nominee.name, 'fadeOut' : selected !== nominee.name}"
                 @click="selectNominee(nominee.name, nominee._id)">
-          <b-card-body>
-            <span align="center">{{nominee.name}}</span>
-          </b-card-body>
+          <span align="center">{{nominee.name}}</span>
         </b-card>
       </b-col>
     </b-row>
