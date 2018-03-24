@@ -16,12 +16,13 @@
           <b-input-group class="spacer" @keyup="storePass">
             <b-form-input ref="passInput" type="password" placeholder="password"></b-form-input>
           </b-input-group>
-          <b-button class="spacer retro-btn" @click="login">Login</b-button>
+          <b-button class="spacer retro-btn" @click="login" :disabled="!(name && password)">Login</b-button>
         </div>
         <div class="instructions">
           <span>Instructions</span>
           <ul class="instructionList">
-            <li>You can login only once</li>
+            <li>You can vote only once</li>
+            <li>Once voted, you cannot login again</li>
             <li>This login is valid only from the time you collected credential till 12:00 AM</li>
             <li>Voting in each category is compulsory</li>
             <li>You will not be able to move to next category until you vote in current category</li>
@@ -49,7 +50,6 @@
           username: this.name,
           password: this.password
         }).then(function (response) {
-          console.log(response);
           if (response.status === 200) {
             this.$store.commit('storeToken', response.body.token);
             this.$router.push('/dashboard');

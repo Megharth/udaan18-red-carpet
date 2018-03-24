@@ -71,6 +71,8 @@
 </template>
 <script>
   import {mapState} from 'vuex'
+  import initialState from '../initialState'
+
   export default{
     data() {
       return {
@@ -93,8 +95,11 @@
           headers: {
             Authorization: this.$store.state.user.token
           }
+        }).then(function(response) {
+          Object.assign(this.$store.state, initialState);
+          this.$router.push("/login");
         });
-        this.$router.push("/login");
+
       }
     },
     computed: mapState({

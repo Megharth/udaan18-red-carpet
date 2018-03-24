@@ -4,7 +4,6 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 import data from '../data.json';
-
 export const store = new Vuex.Store({
   state: {
     user: {
@@ -13,6 +12,7 @@ export const store = new Vuex.Store({
       token: null
     },
     index: 0,
+    loaded: false,
     feedback: {
       name: null,
       rating: null,
@@ -55,6 +55,9 @@ export const store = new Vuex.Store({
     },
     decrementIndex: (state) => {
       state.index--;
+    },
+    setLoaded: (state, payload) => {
+      state.loaded = payload;
     },
     addFinalist: (state, payload) => {
       state.votes[state.index].nominees.name = payload.name;

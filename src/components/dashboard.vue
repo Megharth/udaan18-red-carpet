@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="loading-container" id="loader">
+    <div class="loading-container" id="loader" v-if="!loaded">
       <div class="loading"></div>
       <div id="loading-text">Loading</div>
     </div>
-    <div id="list" class="hide">
+    <div id="list" v-if="loaded">
       <transition name="slide"
                   @enter="enter"
                   @leave="leave">
@@ -55,7 +55,8 @@
       index: state => state.index,
       categories: state => state.categories,
       category: state => state.categories[state.index],
-      votes: state => state.votes
+      votes: state => state.votes,
+      loaded: state => state.loaded
     }),
     data() {
       return {
@@ -102,15 +103,6 @@
       }
     },
     created() {
-
-      function responseToBuffer(response) {
-        return new Promise((resolve, reject) => {
-          response.arrayBuffer()
-            .then((buffer) => resolve({url: response.url, buffer}))
-            .catch((error) => reject(error));
-        })
-      }
-
       function arrayBufferToBase64(buffer) {
         let base64Flag = 'data:image/jpeg;base64,';
         let binary = '';
@@ -119,29 +111,33 @@
         return base64Flag + window.btoa(binary);
       }
 
+      function cachedFetch(url, options) {
+        let storedImage = localStorage.getItem(url);
+        if (storedImage) {
+          return Promise.resolve(storedImage)
+        }
+        else {
+          return fetch(url, options)
+            .then(response => response.arrayBuffer())
+            .then(buffer => {
+              const base64Image = arrayBufferToBase64(buffer);
+              localStorage.setItem(url, base64Image);
+              return Promise.resolve(base64Image);
+            })
+            .catch(Promise.reject);
+
+        }
+      }
+
       const imageUrls = this.categories.reduce((imgList, category) => {
         return imgList.concat(category.nominees.map(nominee => nominee.imgUrl));
       }, []);
 
-      function imageArrayToObject(imgArray) {
-        return imgArray.reduce((acc, img) => {
-          acc[img.url] = img.image;
-          return acc;
-        }, {})
-      }
-
-      Promise.all(imageUrls.map(url => fetch(url)))
-        .then(responses => Promise.all(responses.map(responseToBuffer)))
-        .then(bufferUrls => bufferUrls.map(bufferUrl => ({url: bufferUrl.url, image: arrayBufferToBase64(bufferUrl.buffer)})))
-        .then(imageArrayToObject)
-        .then(imgObject => {
-          this.imgObject = imgObject;
-          document.getElementById("list").classList.remove("hide");
-          document.getElementById("loader").classList.add("hide");
-        }).catch((error) => {
-          document.getElementById("list").classList.remove("hide");
-          document.getElementById("loader").classList.add("hide");
-      });
+      Promise.all(imageUrls.map(url => cachedFetch(url, {cache: 'force-cache'})))
+        .then(() => {
+         this.$store.commit("setLoaded", true);
+        })
+        .catch(error => this.$store.commit("setLoaded", true));
     }
   }
 

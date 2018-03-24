@@ -91,19 +91,3 @@
     padding: 0.6rem 1rem;
   }
 }
-
-/*
-
-@media screen and (min-width: 570px) and (max-width: 600px){
-  .retro-text{
-    font-size: 2.5rem;
-  }
-}
-
-@media screen and (min-width: 600px) and (max-width: 860px){
-  .retro-text{
-    font-size: 2.7rem;
-  }
-}
-
-*/

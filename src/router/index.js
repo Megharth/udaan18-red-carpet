@@ -6,6 +6,7 @@ import Start from '@/components/start'
 import Feedback from '@/components/feedback'
 import Error from '@/components/error'
 import { store } from '../store';
+import initialState from '../initialState'
 
 Vue.use(store);
 Vue.use(Router);
@@ -20,7 +21,11 @@ const router = new Router({
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      beforeEnter: (destination, source, next) => {
+        Object.assign(store.state, initialState);
+        next();
+      }
     },
     {
       path: '/error',
@@ -32,8 +37,6 @@ const router = new Router({
       name: 'Dashboard',
       component: Dashboard,
       beforeEnter: (destination, source, next) => {
-        console.log(next);
-        console.warn(">", source.name, destination.name);
         if(destination.name === "Dashboard" && source.name === "Feedback"){
           next(false);
         }
@@ -52,11 +55,13 @@ const router = new Router({
       name: 'Feedback',
       component: Feedback,
       beforeEnter: (destination, source, next) => {
-        if(destination.name === "Feedback" && (source.name === "Login" || source.name === "Dashboard")){
+        if(destination.name === "Feedback" && source.name === "Dashboard"){
           if(store.state.user.token){
             next();
           }
         }
+        else if(destination.name === "Feedback" && source.name === "Login")
+          next(false);
         else
           next("/login");
       }
