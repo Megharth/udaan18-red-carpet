@@ -6,7 +6,7 @@ import Start from '@/components/start'
 import Feedback from '@/components/feedback'
 import Error from '@/components/error'
 import { store } from '../store';
-import initialState from '../initialState'
+import getInitialState from '../initialState'
 
 Vue.use(store);
 Vue.use(Router);
@@ -23,8 +23,14 @@ const router = new Router({
       name: 'Login',
       component: Login,
       beforeEnter: (destination, source, next) => {
-        Object.assign(store.state, initialState);
-        next();
+        if(destination.name === "Login" && (source.name === "Dashboard" || source.name === "Feedback")){
+          const initialState = getInitialState();
+          console.log("beforeENter called");
+          store.commit("resetState", initialState);
+          next();
+        }
+        else
+          next()
       }
     },
     {
