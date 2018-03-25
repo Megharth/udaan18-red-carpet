@@ -71,7 +71,7 @@
 </template>
 <script>
   import {mapState} from 'vuex'
-  import initialState from '../initialState'
+  import getInitialState from '../initialState'
 
   export default{
     data() {
@@ -96,10 +96,10 @@
             Authorization: this.$store.state.user.token
           }
         }).then(function(response) {
-          Object.assign(this.$store.state, initialState);
+          const initialState = getInitialState();
+          this.$store.commit("resetState", initialState);
           this.$router.push("/login");
         });
-
       }
     },
     computed: mapState({
@@ -108,6 +108,7 @@
   }
 </script>
 <style scoped>
+  @import "../css/font-awesome.css";
   @import "../css/retro.css";
   @import "../css/input.css";
   @import "../css/feedback.css";

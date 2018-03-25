@@ -2,6 +2,7 @@
   box-shadow: 0 0 0.1em 0.1em #00FF33;
   border: 0.1em solid #00FFFF;
   border-radius: 0.2em;
+
 }
 
 .listContainer {
@@ -30,7 +31,7 @@
 }
 
 .fadeOut {
-  opacity: 0.5
+  opacity: 0.8
 }
 
 .card {
@@ -40,9 +41,6 @@
 }
 
 .card-img-top {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
   max-width: 200px;
   max-height: 200px;
 }

@@ -65,6 +65,11 @@ export const store = new Vuex.Store({
     },
     storeError: (state, payload) => {
       state.error = payload;
+    },
+    resetState: (state, payload) => {
+      for (let k in state) {
+        state[k] = payload[k];
+      }
     }
   }
 });

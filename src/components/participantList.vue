@@ -5,7 +5,7 @@
         <b-card :img-src="localStorage.getItem(nominee.imgUrl) || nominee.imgUrl"
                 img-alt="nominee_image"
                 img-top
-                :class="{'mx-auto': true, 'highlight' : selected.name === nominee.name, 'fadeOut' : selected !== nominee.name}"
+                :class="{'mx-auto': true, 'highlight' : selected.name === nominee.name, 'fadeOut' : selected.name !== nominee.name}"
                 @click="selectNominee(nominee.name, nominee._id)">
           <span align="center">{{nominee.name}}</span>
         </b-card>
