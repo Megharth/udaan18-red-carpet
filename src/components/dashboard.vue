@@ -39,6 +39,7 @@
 <script>
   import participantList from './participantList.vue';
   import {mapState} from 'vuex';
+  import {baseUrl} from '../config';
 
   function addEventListener(el, done) {
     el.addEventListener('animationend', function () {
@@ -93,7 +94,7 @@
             nomineeId: vote.nominees._id
           }
         });
-        this.$http.post("https://udaan18-red-carpet.herokuapp.com/votes", data, {
+        this.$http.post(baseUrl + "votes", data, {
           headers: {
             Authorization: this.$store.state.user.token
           }

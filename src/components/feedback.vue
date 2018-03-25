@@ -72,6 +72,7 @@
 <script>
   import {mapState} from 'vuex'
   import getInitialState from '../initialState'
+  import {baseUrl} from '../config'
 
   export default{
     data() {
@@ -91,7 +92,7 @@
         this.$store.commit('setName', this.$refs.nameInput.localValue);
       },
       submit() {
-        this.$http.post("https://udaan18-red-carpet.herokuapp.com/feedback", this.feedback, {
+        this.$http.post(baseUrl + "feedback", this.feedback, {
           headers: {
             Authorization: this.$store.state.user.token
           }

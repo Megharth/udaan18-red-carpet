@@ -36,6 +36,7 @@
 
 <script>
   import {mapState} from 'vuex'
+  import {baseUrl} from '../config'
 
   export default {
     methods: {
@@ -46,7 +47,7 @@
         this.$store.commit('storePass', this.$refs.passInput.localValue);
       },
       login() {
-        this.$http.post("https://udaan18-red-carpet.herokuapp.com/user/login", {
+        this.$http.post(baseUrl + "user/login", {
           username: this.name,
           password: this.password
         }).then(function (response) {
