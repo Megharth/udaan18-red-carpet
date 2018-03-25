@@ -124,7 +124,10 @@
               localStorage.setItem(url, base64Image);
               return Promise.resolve(base64Image);
             })
-            .catch(Promise.reject);
+            .catch(error => {
+              console.log(error);
+              return Promise.reject(error);
+            });
 
         }
       }
@@ -137,7 +140,10 @@
         .then(() => {
          this.$store.commit("setLoaded", true);
         })
-        .catch(error => this.$store.commit("setLoaded", true));
+        .catch(error => {
+          console.log(error);
+          this.$store.commit("setLoaded", true)
+        });
     }
   }
 
