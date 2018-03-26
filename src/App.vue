@@ -15,7 +15,7 @@ export default {
 
 <style>
 body {
-  background-color: #222;
+  background-color: #000;
   transition: all 0.2s ease-in-out;
 }
 #app {
